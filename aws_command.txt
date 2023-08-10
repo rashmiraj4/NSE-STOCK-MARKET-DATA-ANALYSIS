@@ -1,0 +1,17 @@
+bin/kafka-console-consumer.sh --topic stock_demo --bootstrap-server 43.205.212.33:9092
+
+
+bin/kafka-console-producer.sh --topic stock_demo --bootstrap-server 43.205.212.33:9092
+
+ssh -i "stock_market_project.pem" ec2-user@ec2-13-235-95-244.ap-south-1.compute.amazonaws.com
+
+
+wget https://downloads.apache.org/kafka/3.3.1/kafka_2.12-3.3.1.tgz
+
+bin/kafka-topics.sh --create --topic stock_demo --bootstrap-server 43.205.212.33:9092 --replication-factor 1 --partitions 1
+
+bin/kafka-console-producer.sh --topic stock_demo --bootstrap-server 43.205.212.33:9092
+
+
+bin/kafka-console-consumer.sh --topic stock_demo --bootstrap-server 43.205.212.33:9092
+
